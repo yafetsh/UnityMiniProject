@@ -9,13 +9,13 @@ public class charachter : MonoBehaviour
     private float moveSpeed;
     private float dirX;
     private bool facingRight = true;
-    private Vector3 localSale;
+    private Vector3 localScale;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        localSale = transform.localSale;
+        localScale = transform.localScale;
         moveSpeed = 5f;
 
         
@@ -74,11 +74,11 @@ public class charachter : MonoBehaviour
         {
             facingRight = false;
         }
-        if(((facingRight) && (localSale.x < 0)) || ((!facingRight) && (localSale.x > 0)))
+        if(((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
         {
 
-             localSale.x *= -1 ;
+             localScale.x *= -1 ;
         }
-        transform.localSale = localSale;
+        transform.localScale = localScale;
     }
 }
